@@ -19,3 +19,48 @@ $pd-16: 0 16px;
 $mg-t8: 8px 0 0;
 /* image url */
 $url: "/src/assets/images/" !global;
+
+/*───────────────────────────────────────────────────────────
+    BUTTON
+───────────────────────────────────────────────────────────*/
+/* color */
+.wh {border: 1px solid $bd-sub; background: #fff; color: #000;}
+.gr {border: 1px solid $bd-sub; background: $bd-sub; color: $cr-sub;}
+.bk {border: 1px solid #000; background: #000; color: #fff;}
+.rd {border: 1px solid $cr-main; background: $cr-main; color: #fff;}
+/* shape */
+.btn {height: 34px; @include inner(0 12px, 0); @include font-set(12px, 500); border-radius: 4px; line-height: 34px;}
+.btn-db {width: $w-100; @include grid-set(grid, 4px, 1fr 1fr)};
+.btn-img img {border-radius: 4px;}
+.ic {font-size: 0;}
+
+/*───────────────────────────────────────────────────────────
+    InputList (ex. 주문/회원정보)
+───────────────────────────────────────────────────────────*/
+.input-wrap {
+    border: 1px solid #f1f1f1;
+    border-radius: 4px;
+    .tit {@include inner(12px 16px, 0); background-color: $bg-main; border-bottom: 1px solid $bd-main; @include font-set(14px, $f-600);}
+    .list {
+      @include grid-set(grid, null, 120px calc(100% - 120px));
+      li {
+        display: grid; align-items: center; min-height: 40px; @include inner(12px 16px, 0);
+        &:not(:last-of-type) {border-bottom: 1px solid $bd-main;}
+  
+        &.address {
+          .btn-db {
+            @include grid-set(grid, 8px, 120px calc(100% - 128px)); @include inner(0, 0 0 8px);
+            .btn {max-width: 120px; height: 36px; padding: 0;}
+          }
+        }
+        input + input {margin: $mg-t8;}
+      }
+      .name li {
+        font-size: 14px; color: $cr-sub;
+        &.mark {
+          display: flex; align-items: center;
+          &:after {content: "*"; margin-left: 4px; color: $cr-main;}
+        }
+      }
+    }
+  }
