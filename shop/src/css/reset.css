@@ -43,7 +43,7 @@ form {margin:0;}
 .flex-bt {display: flex; justify-content: space-between; align-items: center;}
 .dn {display:none !important;}
 .db {display:block !important;}
-select {-webkit-appearance: none;-moz-appearance: none;appearance: none;}
+select, input {-webkit-appearance: none;-moz-appearance: none;appearance: none;}
 label {vertical-align:middle; margin:0; font-size:12px; cursor: pointer;}
 input[type="text"]:disabled {background:#f5f5f5;}
 input::-webkit-outer-spin-button,
