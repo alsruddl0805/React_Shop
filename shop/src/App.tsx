@@ -5,6 +5,9 @@ import styled from 'styled-components';
 import { useState } from 'react';
 import { Routes, Route, Link, useNavigate } from 'react-router-dom';
 import First from './views/01';
+import Second from './views/02';
+import Third from './views/03';
+import Fourth from './views/04';
 
 interface FontProps {
   size? : string,
@@ -38,10 +41,16 @@ function App() :JSX.Element {
         <MainBox>
           <Font size="50">WELCOME!</Font>
           <Profile name="tester" />
-          <button onClick={() => {navigate('/First')}}>하단으로 이동</button>
+          <button onClick={() => {navigate('/first')}}>1</button>
+          <button onClick={() => {navigate('/second')}}>2</button>
+          <button onClick={() => {navigate('/third')}}>3</button>
+          <button onClick={() => {navigate('/fourth')}}>4</button>
         </MainBox>
         }></Route>
-        <Route path="/First" element={<First/>}></Route>
+        <Route path="/first" element={<First/>}></Route>
+        <Route path="/second" element={<Second/>}></Route>
+        <Route path="/third" element={<Third/>}></Route>
+        <Route path="/fourth" element={<Fourth/>}></Route>
       </Routes>
     </div>
   );
