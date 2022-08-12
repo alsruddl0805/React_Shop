@@ -31,7 +31,14 @@ let Font = styled.p<FontProps>`
 `
 
 function App() :JSX.Element {
-  let [name, setName] = useState('');
+  // state의 type을 지정할 때에는 <> Generics 안에 초기값을 지정해주면 알아서 타입을 유추한다.
+  type Profile = {
+    name: string,
+    age: number,
+    address?: string,
+  }
+
+  let [info, setInfo] = useState<Profile>({name: 'kim', age: 20, address: 'seoul'});
   let navigate = useNavigate();
   
   return (
